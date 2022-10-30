@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../../models/Games.dart';
+import 'package:gamesapp/src/pages/Games/game_requeirement.dart';
+import 'package:gamesapp/src/pages/Games/games_screenshot.dart';
 import '../../provider/game_provider.dart';
 import 'game_info.dart';
 
@@ -64,8 +65,18 @@ class DetailPage extends ConsumerWidget {
                             GameInfo(
                               games: snapshot.data!,
                             ),
-                            Icon(Icons.dangerous),
-                            Icon(Icons.clean_hands)
+                            snapshot.data!.minimumSystemRequirements != null
+                                ? GameRequeriment(
+                                    requirements: snapshot
+                                        .data!.minimumSystemRequirements!)
+                                : const SizedBox(
+                                    child: Center(
+                                    child: Icon(
+                                      Icons.error_outline,
+                                      color: Colors.red,
+                                    ),
+                                  )),
+                            GameScreen(screen: snapshot.data!.screenshots!)
                           ],
                         ),
                       ),

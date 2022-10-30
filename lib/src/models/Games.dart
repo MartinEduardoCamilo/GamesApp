@@ -1,4 +1,3 @@
-import 'package:meta/meta.dart';
 import 'dart:convert';
 
 Games gamesFromJson(String str) => Games.fromJson(json.decode(str));
@@ -91,18 +90,18 @@ class Games {
 
 class MinimumSystemRequirements {
   MinimumSystemRequirements({
-    required this.os,
-    required this.processor,
-    required this.memory,
-    required this.graphics,
-    required this.storage,
+     this.os,
+     this.processor,
+     this.memory,
+     this.graphics,
+     this.storage,
   });
 
-  final String os;
-  final String processor;
-  final String memory;
-  final String graphics;
-  final String storage;
+  final String? os;
+  final String? processor;
+  final String? memory;
+  final String? graphics;
+  final String? storage;
 
   factory MinimumSystemRequirements.fromJson(Map<String, dynamic> json) =>
       MinimumSystemRequirements(
