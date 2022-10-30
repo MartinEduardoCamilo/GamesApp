@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../provider/game_provider.dart';
 import '../../widget/cardItem.dart';
+import 'home_header.dart';
 
 class HomePage extends ConsumerStatefulWidget {
   const HomePage({super.key});
@@ -25,8 +26,9 @@ class HomePageState extends ConsumerState<HomePage> {
         body: Container(
       margin: const EdgeInsets.symmetric(vertical: 25.0, horizontal: 10.0),
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
+          const HomeHeader(),
           listGames.loading
               ? const Center(
                   child: CircularProgressIndicator(),

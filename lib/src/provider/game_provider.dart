@@ -1,9 +1,10 @@
+import 'dart:async';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../models/Games.dart';
 import '../services/games_service.dart';
-
 
 final gameProvider = ChangeNotifierProvider.autoDispose<GameProvider>((ref) {
   return GameProvider();
@@ -11,7 +12,6 @@ final gameProvider = ChangeNotifierProvider.autoDispose<GameProvider>((ref) {
 
 class GameProvider extends ChangeNotifier {
   final GameService gameService = GameService();
-
   Games? games = Games();
   final List<Games>? gamelist = [];
   bool loading = false;
@@ -31,4 +31,7 @@ class GameProvider extends ChangeNotifier {
     loading = false;
     notifyListeners();
   }
+
+
 }
+

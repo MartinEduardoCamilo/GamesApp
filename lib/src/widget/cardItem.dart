@@ -13,8 +13,12 @@ class CardItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        Navigator.push(context,
-            MaterialPageRoute(builder: (context) =>  DetailPage(id: element.id!,)));
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => DetailPage(
+                      id: element.id!,
+                    )));
       },
       child: Card(
         elevation: 3,
@@ -29,10 +33,11 @@ class CardItem extends StatelessWidget {
               Column(
                 children: <Widget>[
                   Expanded(
-                      child: Image(
-                    image: NetworkImage(element.thumbnail!),
-                    fit: BoxFit.fill,
-                  )),
+                    child: Image.network(
+                      element.thumbnail!,
+                      fit: BoxFit.fill,
+                    ),
+                  ),
                   const SizedBox(
                     height: 10,
                   ),
