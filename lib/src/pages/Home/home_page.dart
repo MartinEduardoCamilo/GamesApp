@@ -27,6 +27,7 @@ class HomePageState extends ConsumerState<HomePage> {
       margin: const EdgeInsets.symmetric(vertical: 25.0, horizontal: 10.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           const HomeHeader(),
           listGames.loading
