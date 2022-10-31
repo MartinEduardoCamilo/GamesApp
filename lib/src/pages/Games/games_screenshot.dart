@@ -14,7 +14,7 @@ class GameScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return screen.isEmpty
         ? const Center(
-            child: Text("No data or loading.....",style: TextStyle(fontSize: 18)),
+            child: Text("Not Found or Loading.....",style: TextStyle(fontSize: 18)),
           )
         : ListView.builder(
             itemCount: screen.length,

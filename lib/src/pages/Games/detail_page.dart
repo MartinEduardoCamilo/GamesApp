@@ -71,7 +71,7 @@ class DetailPage extends ConsumerWidget {
                                         .data!.minimumSystemRequirements!)
                                 : const SizedBox(
                                     child: Center(
-                                    child: Text("No Found!",style: TextStyle(fontSize: 18),),
+                                    child: Text("Not Found!",style: TextStyle(fontSize: 18),),
                                   )),
                             GameScreen(screen: snapshot.data!.screenshots!)
                           ],
