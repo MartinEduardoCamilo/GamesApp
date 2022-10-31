@@ -23,13 +23,16 @@ class HomePageState extends ConsumerState<HomePage> {
   Widget build(BuildContext context) {
     final listGames = ref.watch(gameProvider);
     return Scaffold(
+      appBar:  AppBar(
+        title:  const Text("Free to Games", style: TextStyle(fontSize: 20,color: Colors.black)),
+        backgroundColor: Colors.white,
+      ),
         body: Container(
       margin: const EdgeInsets.symmetric(vertical: 25.0, horizontal: 10.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          const HomeHeader(),
           listGames.loading
               ? const Center(
                   child: CircularProgressIndicator(),
